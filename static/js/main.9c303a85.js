@@ -26740,63 +26740,135 @@ n.m = e, n.amdD = function() {
                     loginApp: o,
                     baseURL: a
                 } = this.props;
-                return this.state.error ? this.props.plugin ? r.createElement(r.Fragment, null, r.createElement(e.default, {
-                    id: li.__hash
-                }, li), r.createElement("div", {
-                    className: `jsx-${li.__hash} pluginBoundary`
-                }, r.createElement(fi, null), r.createElement("div", {
-                    className: `jsx-${li.__hash} pluginErrorMessage`
-                }, ge.A.t("There was a problem loading this plugin")), r.createElement("div", {
-                    onClick: () => {
-                        this.handleCopyErrorDetailsPlugin({
-                            error: this.state.error,
-                            errorInfo: this.state.errorInfo
-                        })
-                    },
-                    className: `jsx-${li.__hash} pluginErrorCopy`
-                }, ge.A.t("Copy debug info to clipboard")), i && r.createElement("div", {
-                    className: `jsx-${li.__hash} pluginRetry`
-                }, r.createElement(ci, {
-                    onClick: i,
-                    plugin: !0
-                }, ge.A.t("Try again"))))) : r.createElement("div", {
-                    className: `jsx-${li.__hash} ` + (Oe()("mask", {
-                        fullscreen: n
-                    }) || "")
-                }, r.createElement(e.default, {
-                    id: li.__hash
-                }, li), r.createElement("div", {
-                    className: `jsx-${li.__hash} container`
-                }, r.createElement("h1", {
-                    className: `jsx-${li.__hash} message`
-                }, ge.A.t("App is Ready")), o && a && r.createElement("div", {
-                    className: `jsx-${li.__hash} retry`
-                }, r.createElement(ci, {
-                    onClick: this.handleSafeLoginRedirect
-                }, ge.A.t("Redirect to safe login mode"))), i && r.createElement("div", {
-                    className: `jsx-${li.__hash} retry`
-                }, r.createElement(ci, {
-                    onClick: i
-                }, ge.A.t("Proceed"))), r.createElement("button", {
-                    onClick: this.toggleTechInfoDrawer,
-                    className: `jsx-${li.__hash} drawerToggle`
-                }, this.state.drawerOpen ? ge.A.t("Hide technical details") : ge.A.t("Show technical details")), r.createElement("div", {
-                    className: `jsx-${li.__hash} ` + (Oe()("drawer", {
-                        hidden: !this.state.drawerOpen
-                    }) || "")
-                }, r.createElement("div", {
-                    className: `jsx-${li.__hash} errorIntro`
-                }, r.createElement("p", {
-                    className: `jsx-${li.__hash}`
-                }, di), r.createElement("p", {
-                    className: `jsx-${li.__hash}`
-                }, ge.A.t("The following information may be requested by technical support.")), r.createElement(ci, {
-                    onClick: this.handleCopyErrorDetails
-                }, ge.A.t("Copy technical details to clipboard"))), r.createElement("pre", {
-                    ref: this.errorDetailsRef,
-                    className: `jsx-${li.__hash} errorDetails`
-                }, `${this.state.error}\n`, this.state.error.stack, this.state.errorInfo.componentStack)))) : t
+            
+                return this.state.error ? (
+                    this.props.plugin ? (
+                        r.createElement(
+                            r.Fragment,
+                            null,
+                            r.createElement(e.default, { id: li.__hash }, li),
+                            r.createElement(
+                                "div",
+                                { className: `jsx-${li.__hash} pluginBoundary` },
+                                r.createElement(fi, null),
+                                r.createElement(
+                                    "div",
+                                    { className: `jsx-${li.__hash} pluginErrorMessage` },
+                                    ge.A.t("There was a problem loading this plugin")
+                                ),
+                                r.createElement(
+                                    "div",
+                                    {
+                                        onClick: () => {
+                                            this.handleCopyErrorDetailsPlugin({
+                                                error: this.state.error,
+                                                errorInfo: this.state.errorInfo
+                                            });
+                                        },
+                                        className: `jsx-${li.__hash} pluginErrorCopy`
+                                    },
+                                    ge.A.t("Copy debug info to clipboard")
+                                ),
+                                i &&
+                                    r.createElement(
+                                        "div",
+                                        { className: `jsx-${li.__hash} pluginRetry` },
+                                        r.createElement(
+                                            ci,
+                                            { onClick: i, plugin: !0 },
+                                            ge.A.t("Try again")
+                                        )
+                                    )
+                            )
+                        )
+                    ) : (
+                        r.createElement(
+                            "div",
+                            {
+                                className:
+                                    `jsx-${li.__hash} ` +
+                                    (Oe()("mask", { fullscreen: n }) || "")
+                            },
+                            r.createElement(e.default, { id: li.__hash }, li),
+                            r.createElement(
+                                "div",
+                                { className: `jsx-${li.__hash} container` },
+                                r.createElement(
+                                    "h1",
+                                    { className: `jsx-${li.__hash} message` },
+                                    ge.A.t("App is Ready")
+                                ),
+                                o &&
+                                    a &&
+                                    r.createElement(
+                                        "div",
+                                        { className: `jsx-${li.__hash} retry` },
+                                        r.createElement(
+                                            ci,
+                                            { onClick: this.handleSafeLoginRedirect },
+                                            ge.A.t("Redirect to safe login mode")
+                                        )
+                                    ),
+                                i &&
+                                    r.createElement(
+                                        "div",
+                                        { className: `jsx-${li.__hash} retry` },
+                                        r.createElement(
+                                            ci,
+                                            { onClick: i },
+                                            ge.A.t("Proceed")
+                                        )
+                                    ),
+                                // Button with no text:
+                                r.createElement("button", {
+                                    onClick: this.toggleTechInfoDrawer,
+                                    className: `jsx-${li.__hash} drawerToggle`
+                                }),
+                                r.createElement(
+                                    "div",
+                                    {
+                                        className:
+                                            `jsx-${li.__hash} ` +
+                                            (Oe()("drawer", { hidden: !this.state.drawerOpen }) || "")
+                                    },
+                                    r.createElement(
+                                        "div",
+                                        { className: `jsx-${li.__hash} errorIntro` },
+                                        r.createElement(
+                                            "p",
+                                            { className: `jsx-${li.__hash}` },
+                                            di
+                                        ),
+                                        r.createElement(
+                                            "p",
+                                            { className: `jsx-${li.__hash}` },
+                                            ge.A.t("The following information may be requested by technical support.")
+                                        ),
+                                        r.createElement(
+                                            ci,
+                                            { onClick: this.handleCopyErrorDetails },
+                                            ge.A.t("Copy technical details to clipboard")
+                                        )
+                                    ),
+                                    r.createElement(
+                                        "pre",
+                                        {
+                                            ref: this.errorDetailsRef,
+                                            className: `jsx-${li.__hash} errorDetails`
+                                        },
+                                        `${this.state.error}\n`,
+                                        this.state.error.stack,
+                                        this.state.errorInfo.componentStack
+                                    )
+                                )
+                            )
+                        )
+                    )
+                ) : (
+                    t
+                );
             }
+            
         }
         pi.propTypes = {
             children: he().node.isRequired,
